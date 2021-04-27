@@ -12,60 +12,6 @@
 
 // Uses Node, AMD or browser globals to create a module.
 
-function showBloodOptions(){
-	if($('#inlineCheckbox10').prop('checked')){
-	$('.div-for-plasma').removeClass('d-none');
-
-	}else{
-	$('.div-for-plasma').addClass('d-none');
-
-	}
-	}
-
-     function replaceLast(find, replace, string) {
-            var lastIndex = string.lastIndexOf(find);
-            
-            if (lastIndex === -1) {
-                return string;
-            }
-            
-            var beginString = string.substring(0, lastIndex);
-            var endString = string.substring(lastIndex + find.length);
-            
-            return beginString + replace + endString;
-        }
-function checkHere(param) {
-    
-    let str;
-     if(param == 1){
-	   str = document.getElementById("clickHere1").href;
-     }
-	  var cityNameStr=document.getElementById("cityName").value;
-	  var dataVarifiedStr=document.querySelector('input[name="dataVerification"]:checked').value;
-  	  let bloodGroupStr="";
-	  if(document.querySelector('input[name="bloodGroup"]:checked')) 
-	  bloodGroupStr=document.querySelector('input[name="bloodGroup"]:checked').value;
-
-	  var facilitiesStr = document.getElementsByName('facilities');
-	  var combinedFacilityStr="";
-	  for (var checkbox of facilitiesStr) {
-	    if (checkbox.checked)
-	      combinedFacilityStr+=checkbox.value +  " OR " ;
-	  }
-     if(combinedFacilityStr.endsWith(" OR ")){
-        combinedFacilityStr = replaceLast(" OR ","",combinedFacilityStr);
-     }
-	  combinedFacilityStr=" ( " + combinedFacilityStr + " ) ";
-	  		  
-      if(param == 1){
-	  document.getElementById("clickHere1").href="";
-	  document.getElementById("clickHere1").href="https://twitter.com/search?q="+dataVarifiedStr+" "+cityNameStr+combinedFacilityStr+bloodGroupStr+"&f=live";
-      }
-		   
-  	  document.getElementById("clickInsta").href="https://www.instagram.com/explore/tags/"+document.getElementById("hashtagName").value;
-  	  document.getElementById("clickTwitter").href="https://twitter.com/hashtag/"+document.getElementById("hashtagName").value+"?f=live";
-
-	  }
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
