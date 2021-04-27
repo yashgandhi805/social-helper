@@ -173,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 													<div class="col-md-3">
 														<input class="form-check-input customHeight"
-															type="checkbox" name="facilities" id="inlineCheckbox10"
+															type="checkbox" name="facilities" id="inlineCheckbox10" onClick="showBloodOptions()"
 															value="plasma"> Plasma
 													</div>
 													<div class="col-md-3">
@@ -182,7 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 															value="food OR tiffin"> Food
 													</div>
 
-<div class="div-for-plasma">
+<div class="div-for-plasma d-none">
 													<div class="col-md-12">
 														<b> Blood Group :</b>
 													</div>
@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 														</fieldset>
 													</div>
 													<br/>
-                                                    	<div class="col-md-3">
+                                                    	<div class="col-md-3 col-sm-3">
                                                         <fieldset>
 															<a class="btn" href="https://www.instagram.com/explore/tags/"
 																style="background-color: #FFBB05; color: black;"
@@ -269,7 +269,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 																target="_blank">Click For Instagram</a>
 														</fieldset>
                                                     	</div>
-                                                        <div class="col-md-3">
+                                                        <div class="col-md-3 col-sm-3">
 														<fieldset>
 															<a class="btn" href="https://twitter.com/search?q="
 																style="background-color: #FFBB05; color: black;"
@@ -316,6 +316,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </html>
 <script>
 
+$('.div-for-plasma').addClass('d-none');
+
+function showBloodOptions(){
+if($('#inlineCheckbox10').prop('checked')){
+$('.div-for-plasma').removeClass('d-none');
+
+}else{
+$('.div-for-plasma').addClass('d-none');
+
+}
+}
 
      function replaceLast(find, replace, string) {
             var lastIndex = string.lastIndexOf(find);
